@@ -1,0 +1,32 @@
+For loop
+public int sumOfList(List<Integer> nums) {
+    int sum = 0;
+    for (int num : nums) {
+        sum += num;
+    }
+    return sum;
+}
+
+While loop
+public int sumFromWhile(List<Integer> nums) {
+    int sum = 0;
+    int i = 0;
+    while (i < nums.size()) {
+        sum += nums.get(i);
+        i++;
+    }
+    return sum;
+}
+
+Recursion
+public int sumListRecursive(List<Integer> nums) {
+    return sumListRecursiveHelper(nums, 0);
+}
+
+private int sumListRecursiveHelper(List<Integer> nums, int index) {
+    if (index == nums.size()) {
+        return 0;
+    } else {
+        return nums.get(index) + sumListRecursiveHelper(nums, index + 1);
+    }
+}
